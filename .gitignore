@@ -172,6 +172,7 @@ cython_debug/
 
 # workspace
 .workspace
+.worktrees/
 
 # CSV
 *.csv
