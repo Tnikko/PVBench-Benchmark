@@ -1,0 +1,236 @@
+{
+  "repository_commit": "e5982b988ff41c5d69537ef480425d0cdc3e384e",
+  "dataset_cases": 209,
+  "generated_test_cases": 96,
+  "generated_tests_per_case": 3,
+  "definitions": {
+    "basic_pass": "A matching :post.json exists, showing the validated patch reached PoC+ evaluation.",
+    "dev_poc_plus_pass": "The matching :post.json has result=true.",
+    "gen_poc_plus_pass": "Dev PoC+ passes and, for the 96 generated-test cases, gen1/gen2/gen3 all exist with result=true.",
+    "fdr": "(basic_pass - gen_poc_plus_pass) / basic_pass."
+  },
+  "rows": [
+    {
+      "agent": "PatchAgent",
+      "model": "Sonnet-4",
+      "expected_runs_for_209_cases": 1045,
+      "observed_runs": 1040,
+      "observed_cases": 208,
+      "missing_cases": [
+        "simdjson-issue-1273"
+      ],
+      "candidate_patch_traces": 971,
+      "basic_pass": 868,
+      "dev_poc_plus_pass": 525,
+      "gen_poc_plus_pass": 516,
+      "missing_gen_result_files_for_dev_passes": 0,
+      "calculated_percent": {
+        "basic": 83.46153846153847,
+        "dev": 50.48076923076923,
+        "gen": 49.61538461538461,
+        "fdr": 40.55299539170507
+      },
+      "readme_percent": {
+        "basic": 83.5,
+        "dev": 50.7,
+        "gen": 50.1,
+        "fdr": 40.1
+      },
+      "difference_percentage_points": {
+        "basic": -0.038461538461532996,
+        "dev": -0.21923076923076934,
+        "gen": -0.4846153846153882,
+        "fdr": 0.4529953917050662
+      }
+    },
+    {
+      "agent": "PatchAgent",
+      "model": "GPT-4.1",
+      "expected_runs_for_209_cases": 1045,
+      "observed_runs": 1040,
+      "observed_cases": 208,
+      "missing_cases": [
+        "simdjson-issue-1273"
+      ],
+      "candidate_patch_traces": 959,
+      "basic_pass": 793,
+      "dev_poc_plus_pass": 467,
+      "gen_poc_plus_pass": 460,
+      "missing_gen_result_files_for_dev_passes": 0,
+      "calculated_percent": {
+        "basic": 76.25,
+        "dev": 44.90384615384615,
+        "gen": 44.23076923076923,
+        "fdr": 41.992433795712486
+      },
+      "readme_percent": {
+        "basic": 76.4,
+        "dev": 45.2,
+        "gen": 44.5,
+        "fdr": 41.7
+      },
+      "difference_percentage_points": {
+        "basic": -0.15000000000000568,
+        "dev": -0.29615384615384954,
+        "gen": -0.2692307692307665,
+        "fdr": 0.2924337957124834
+      }
+    },
+    {
+      "agent": "San2Patch",
+      "model": "Sonnet-4",
+      "expected_runs_for_209_cases": 1045,
+      "observed_runs": 1040,
+      "observed_cases": 208,
+      "missing_cases": [
+        "simdjson-issue-1273"
+      ],
+      "candidate_patch_traces": 427,
+      "basic_pass": 427,
+      "dev_poc_plus_pass": 222,
+      "gen_poc_plus_pass": 211,
+      "missing_gen_result_files_for_dev_passes": 0,
+      "calculated_percent": {
+        "basic": 41.05769230769231,
+        "dev": 21.346153846153847,
+        "gen": 20.28846153846154,
+        "fdr": 50.585480093676814
+      },
+      "readme_percent": {
+        "basic": 41.3,
+        "dev": 21.6,
+        "gen": 20.7,
+        "fdr": 49.8
+      },
+      "difference_percentage_points": {
+        "basic": -0.24230769230769056,
+        "dev": -0.2538461538461547,
+        "gen": -0.4115384615384592,
+        "fdr": 0.7854800936768171
+      }
+    },
+    {
+      "agent": "San2Patch",
+      "model": "GPT-4.1",
+      "expected_runs_for_209_cases": 1045,
+      "observed_runs": 1040,
+      "observed_cases": 208,
+      "missing_cases": [
+        "simdjson-issue-1273"
+      ],
+      "candidate_patch_traces": 392,
+      "basic_pass": 392,
+      "dev_poc_plus_pass": 209,
+      "gen_poc_plus_pass": 203,
+      "missing_gen_result_files_for_dev_passes": 0,
+      "calculated_percent": {
+        "basic": 37.69230769230769,
+        "dev": 20.096153846153847,
+        "gen": 19.51923076923077,
+        "fdr": 48.214285714285715
+      },
+      "readme_percent": {
+        "basic": 37.9,
+        "dev": 20.2,
+        "gen": 19.6,
+        "fdr": 48.2
+      },
+      "difference_percentage_points": {
+        "basic": -0.20769230769230518,
+        "dev": -0.10384615384615259,
+        "gen": -0.08076923076923137,
+        "fdr": 0.014285714285712459
+      }
+    },
+    {
+      "agent": "SWE-Agent",
+      "model": "Sonnet-4",
+      "expected_runs_for_209_cases": 1045,
+      "observed_runs": 1040,
+      "observed_cases": 208,
+      "missing_cases": [
+        "simdjson-issue-1273"
+      ],
+      "candidate_patch_traces": 300,
+      "basic_pass": 301,
+      "dev_poc_plus_pass": 212,
+      "gen_poc_plus_pass": 199,
+      "missing_gen_result_files_for_dev_passes": 0,
+      "calculated_percent": {
+        "basic": 28.942307692307693,
+        "dev": 20.384615384615383,
+        "gen": 19.134615384615383,
+        "fdr": 33.88704318936877
+      },
+      "readme_percent": {
+        "basic": 29.0,
+        "dev": 20.5,
+        "gen": 19.6,
+        "fdr": 32.3
+      },
+      "difference_percentage_points": {
+        "basic": -0.0576923076923066,
+        "dev": -0.11538461538461675,
+        "gen": -0.46538461538461817,
+        "fdr": 1.5870431893687709
+      }
+    },
+    {
+      "agent": "SWE-Agent",
+      "model": "GPT-4.1",
+      "expected_runs_for_209_cases": 1045,
+      "observed_runs": 1040,
+      "observed_cases": 208,
+      "missing_cases": [
+        "simdjson-issue-1273"
+      ],
+      "candidate_patch_traces": 146,
+      "basic_pass": 147,
+      "dev_poc_plus_pass": 85,
+      "gen_poc_plus_pass": 82,
+      "missing_gen_result_files_for_dev_passes": 0,
+      "calculated_percent": {
+        "basic": 14.134615384615385,
+        "dev": 8.173076923076923,
+        "gen": 7.884615384615385,
+        "fdr": 44.21768707482993
+      },
+      "readme_percent": {
+        "basic": 14.4,
+        "dev": 8.4,
+        "gen": 8.3,
+        "fdr": 41.3
+      },
+      "difference_percentage_points": {
+        "basic": -0.26538461538461533,
+        "dev": -0.226923076923077,
+        "gen": -0.4153846153846157,
+        "fdr": 2.917687074829935
+      }
+    }
+  ],
+  "overall": {
+    "observed_runs": 6240,
+    "basic_pass": 2928,
+    "dev_poc_plus_pass": 1720,
+    "gen_poc_plus_pass": 1671,
+    "calculated_percent": {
+      "basic": 46.92307692307692,
+      "dev": 27.564102564102566,
+      "gen": 26.778846153846153,
+      "fdr": 42.93032786885246
+    },
+    "readme_percent": {
+      "basic": 47.1,
+      "dev": 27.8,
+      "gen": 27.1,
+      "fdr": 42.3
+    },
+    "difference_percentage_points": {
+      "basic": -0.17692307692308162,
+      "dev": -0.23589743589743506,
+      "gen": -0.3211538461538481,
+      "fdr": 0.6303278688524614
+    }
+  }
+}

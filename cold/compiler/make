@@ -1,0 +1,47 @@
+#!/bin/bash
+set -euo pipefail
+
+real_make="${COLD_REAL_MAKE:-/usr/bin/make}"
+build_jobs="${CPYTHON_BUILD_JOBS:-${BUILD_JOBS:-$(/usr/bin/nproc)}}"
+test_jobs="${TEST_JOBS:-$(/usr/bin/nproc)}"
+
+args=()
+is_test=0
+has_testopts=0
+
+while (($#)); do
+    case "$1" in
+        -j | --jobs)
+            args+=("-j${build_jobs}")
+            shift
+            if (($#)) && [[ "$1" =~ ^[0-9]+$ ]]; then
+                shift
+            fi
+            ;;
+        -j* | --jobs=*)
+            args+=("-j${build_jobs}")
+            shift
+            ;;
+        test)
+            is_test=1
+            args+=("$1")
+            shift
+            ;;
+        TESTOPTS=*)
+            testopts="${1#TESTOPTS=}"
+            args+=("TESTOPTS=-j${test_jobs}${testopts:+ ${testopts}}")
+            has_testopts=1
+            shift
+            ;;
+        *)
+            args+=("$1")
+            shift
+            ;;
+    esac
+done
+
+if ((is_test)) && ((!has_testopts)); then
+    args+=("TESTOPTS=-j${test_jobs}")
+fi
+
+exec "$real_make" "${args[@]}"
